@@ -41,6 +41,7 @@ return require('packer').startup(function(use)
 
     -- grep
     use 'mileszs/ack.vim'
+    use 'jremmen/vim-ripgrep'
 
     -- wiki
     use 'vimwiki/vimwiki'

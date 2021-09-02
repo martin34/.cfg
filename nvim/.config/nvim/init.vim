@@ -15,7 +15,7 @@ source <sfile>:h/plugin/vimspector.vim
 source <sfile>:h/plugin/vimwiki.vim
 source <sfile>:h/plugin/vsnip.vim
 
-let mapleader = "\<Space>"
+let mapleader = ","
 set hidden
 set number
 set relativenumber
