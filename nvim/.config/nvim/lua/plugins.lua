@@ -41,6 +41,9 @@ return require('packer').startup(function(use)
     -- colorschemes
     use {'sainnhe/everforest', config = function() require'config.everforest'.setup() end }
 
+    -- grep
+    use {'jremmen/vim-ripgrep'}
+
     -- wiki
     use {'vimwiki/vimwiki', config = function() require'config.vimwiki'.setup() end }
 
