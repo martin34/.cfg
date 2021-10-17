@@ -17,6 +17,12 @@
         "/// @copyright Copyright (C) $CURRENT_YEAR, Bayerische Motoren Werke Aktiengesellschaft (BMW AG)",
         "///"
     ]
+  },
+  "debugprint": {
+    "prefix": ["std::cerr", "debugprint"],
+    "body": [
+        "std::cerr << __PRETTY_FUNCTION__ << \" $1: \" << $2 << '\\n';"
+    ]
   }
 }
 
