@@ -123,6 +123,8 @@ return require('packer').startup(function(use)
 
     -- mappings
     use {'folke/which-key.nvim', config = function() require'config.mappings'.setup() end , after = "neotest"}
+    -- helpers
+    require'config.terminal-split'.setup()
 
   -- Automatically set up your configuration after cloning packer.nvim
   -- Put this at the end after all plugins
