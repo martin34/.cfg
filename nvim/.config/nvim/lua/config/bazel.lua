@@ -155,6 +155,7 @@ function M.setup()
     -- Info: to make tab completion work copy '/etc/bash_completion.d/bazel-complete.bash' to '/etc/bash_completion.d/bazel'
 
     vim.g.bazel_config = vim.g.bazel_config  or ''
+    vim.g.bazel_config_dbg = vim.g.bazel_config_dbg  or '-c dbg'
 
     vim.cmd[[
     set errorformat=ERROR:\ %f:%l:%c:%m
