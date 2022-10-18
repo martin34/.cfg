@@ -98,6 +98,7 @@ function M.setup()
     map('n', '<leader>grw', function() builtin.live_grep({cwd = "$HOME/projects/vimwiki"}) end, {desc = "Grep Wiki"})
     map('n', '<leader>grn', function() builtin.live_grep({search_dirs = {"$HOME/.config/nvim", "$HOME/.local/share/nvim/site/pack/packer"}}) end, {desc = "Grep Neovim Files"})
 
+
     -- git
     map('n', '<leader>gb', function() builtin.git_branches({cwd = vim.fn.expand("%:p:h")}) end, {desc = "Git Branches"})
     map('n', '<leader>gc', function() builtin.git_bcommits({cwd = vim.fn.expand("%:p:h")}) end, {desc = "Git Commits"})
@@ -196,6 +197,7 @@ function M.setup()
     map('n', '<leader>tf',  function() neotest.run.run(vim.fn.expand("%")) end, {desc = "Test File"})
     map('n', '<leader>tdt', function() neotest.run.run({strategy = "dap"}) end, {desc = "Test Debug Nearest Test"})
     map('n', '<leader>tdf', function() neotest.run.run({vim.fn.expand("%"), strategy = "dap"}) end, {desc = "Test Debug File"})
+    map('n', '<leader>t', require'config.terminal-split'.split_terminal)
 
     pcall(require, 'user.mappings')
 end
