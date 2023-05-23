@@ -1,5 +1,6 @@
 local M = {}
 local nvim_tree = require'nvim-tree'
+local api = require'nvim-tree.api'
 local nvim_tree_lib = require'nvim-tree.lib'
 local change_dir = require'nvim-tree.actions.root.change-dir'
 local telescope = require'telescope.builtin'
@@ -7,20 +8,7 @@ local util = require 'lspconfig.util'
 local core = require "nvim-tree.core"
 
 function M.nvim_tree_find_file()
-  local function starts_with(str, pattern)
-    return string.sub(str, 1, string.len(pattern)) == pattern
-  end
-
-  local path = vim.fn.expand('%:p:h')
-  local new_root = util.find_git_ancestor(path) or path
-
-  if not new_root or starts_with(new_root, vim.g.project_path) then
-    core.init(vim.g.project_path)
-    nvim_tree.find_file(true)
-  else
-    core.init(new_root)
-    nvim_tree.find_file(true)
-  end
+  api.tree.open({find_file=true})
 end
 
 function M.nvim_tree_toggle_project()
